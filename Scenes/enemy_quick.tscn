@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c307xem5mwi5o"]
+
+[ext_resource type="Script" path="res://Scripts/enemy_quick.gd" id="1_6475d"]
+[ext_resource type="Texture2D" uid="uid://bewk58nh5k636" path="res://Assets/Space 1/PNG/Enemies/enemyBlack5.png" id="2_j70fw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ir6s"]
+size = Vector2(36, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lumln"]
+size = Vector2(24.3095, 81.3023)
+
+[node name="EnemyQuick" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_6475d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_j70fw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_0ir6s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(26.5199, -7.38245)
+rotation = 0.29625
+shape = SubResource("RectangleShape2D_lumln")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(-28.3244, -7.06103)
+rotation = -0.296706
+shape = SubResource("RectangleShape2D_lumln")

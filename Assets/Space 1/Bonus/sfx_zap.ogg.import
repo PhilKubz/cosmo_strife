@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dl2ait42clmdl"
+path="res://.godot/imported/sfx_zap.ogg-8e2a8dd55fccc6ff08110497d88c9d87.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Space 1/Bonus/sfx_zap.ogg"
+dest_files=["res://.godot/imported/sfx_zap.ogg-8e2a8dd55fccc6ff08110497d88c9d87.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
