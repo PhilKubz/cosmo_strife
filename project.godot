@@ -15,6 +15,10 @@ run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [input]
 
 move_right={
@@ -35,3 +39,23 @@ shoot={
 , Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(460, 26),"global_position":Vector2(466, 89),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+shoot_2={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(110, 19),"global_position":Vector2(114, 62),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+
+[layer_names]
+
+2d_render/layer_1="player"
+2d_render/layer_2="laser_red"
+2d_render/layer_3="laser_blue"
+2d_render/layer_4="enemy_basic"
+2d_render/layer_5="enemy_quick"
+2d_render/layer_6="deathzone"
+2d_physics/layer_1="player"
+2d_physics/layer_2="laser_red"
+2d_physics/layer_3="laser_blue"
+2d_physics/layer_4="enemy_basic"
+2d_physics/layer_5="enemy_quick"
+2d_physics/layer_6="deathzone"
