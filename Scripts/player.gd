@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-#signal damage_taken
+signal damage_taken
 #
-var speed = 900
+var speed = 800
 var laser_blue_scene = preload("res://Scenes/laser_blue.tscn")
 var laser_red_scene = preload("res://Scenes/laser_red.tscn")
 #
@@ -63,8 +63,8 @@ func shoot_2():
 #	rocket_laser_sound.play()
 
 #
-#func take_damage():
-#	damage_taken.emit()
-#
-#func die():
-#	queue_free()
+func take_damage():
+	damage_taken.emit()
+
+func die():
+	queue_free()

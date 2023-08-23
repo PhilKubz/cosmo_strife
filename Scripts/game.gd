@@ -58,3 +58,7 @@ func on_enemy_died():
 #func _on_enemy_spawner_path_enemy_spawned_02(path_enemy_instance_02):
 #	add_child(path_enemy_instance_02)
 #	path_enemy_instance_02.enemy2.connect("enemy_died", on_special_enemy_died)
+
+
+func _on_player_damage_taken():
+	pass # Replace with function body.

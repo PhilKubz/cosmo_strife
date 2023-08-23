@@ -2,7 +2,7 @@ extends Area2D
 
 signal enemy_died
 
-@export var speed = 90
+@export var speed = 80
 
 func _physics_process(delta):
 	global_position.y += speed * delta
@@ -20,6 +20,6 @@ func _on_body_entered(body):
 	body.take_damage()
 	queue_free()
 
-
-func _on_enemy_died():
-	pass # Replace with function body.
+#
+#func _on_enemy_died():
+#	pass # Replace with function body.
