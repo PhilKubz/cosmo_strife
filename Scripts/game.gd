@@ -23,6 +23,8 @@ var game_paused : bool = false:
 
 @onready var enemy_spawner = $EnemySpawner
 @onready var player = $Player
+@onready var ui = $UI
+@onready var hud = $UI/HUD
 #@onready var enemy_hit_sound = $EnemyHitSound
 #@onready var player_hit_sound = $PlayerHitSound
 
