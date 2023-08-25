@@ -13,7 +13,7 @@ var enemy_quick_scene = preload("res://Scenes/enemy_quick.tscn")
 
 func _on_timer_timeout():
 	spawn_enemy()
-	print("Enemy Spawned")
+#	print("Enemy Spawned")
 	
 
 func spawn_enemy():

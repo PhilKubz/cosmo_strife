@@ -13,7 +13,7 @@ var game_paused : bool = false:
 		emit_signal("toggle_game_paused", game_paused)
 
 #var lives = 3
-var score = 0
+#var score = 0
 
 #	set(value):
 #		score = value
@@ -24,13 +24,13 @@ var score = 0
 @onready var enemy_spawner = $EnemySpawner
 @onready var player = $Player
 @onready var ui = $UI
-@onready var hud = $UI/HUD
+#@onready var hud = $UI/HUD
 #@onready var enemy_hit_sound = $EnemyHitSound
 #@onready var player_hit_sound = $PlayerHitSound
 
 func _ready():
 	pass
-	hud.set_score_label(score)
+#	hud.set_score_label(score)
 #	hud.set_lives(lives)
 
 func _input(event : InputEvent):
