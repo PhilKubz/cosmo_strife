@@ -1,0 +1,87 @@
+[gd_scene load_steps=9 format=3 uid="uid://cvwntbjiccn6a"]
+
+[ext_resource type="Script" path="res://Scripts/menu_main.gd" id="1_b2wsn"]
+[ext_resource type="FontFile" uid="uid://dqp4av6fdah05" path="res://Assets/Space 1/Bonus/kenvector_future_thin.ttf" id="2_mavm2"]
+[ext_resource type="Texture2D" uid="uid://dn4tiqiocqaxm" path="res://Assets/Space 1/Backgrounds/black.png" id="3_2jvws"]
+[ext_resource type="Texture2D" uid="uid://cbd0y83jq0a67" path="res://Assets/Space 1/PNG/Meteors/meteorGrey_big1.png" id="4_oaew1"]
+
+[sub_resource type="Theme" id="Theme_ycrsf"]
+default_font = ExtResource("2_mavm2")
+default_font_size = 95
+
+[sub_resource type="Theme" id="Theme_n2flv"]
+default_font = ExtResource("2_mavm2")
+default_font_size = 19
+
+[sub_resource type="Theme" id="Theme_phaln"]
+default_font = ExtResource("2_mavm2")
+default_font_size = 19
+
+[sub_resource type="Theme" id="Theme_1qxme"]
+default_font = ExtResource("2_mavm2")
+default_font_size = 19
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b2wsn")
+
+[node name="MenuHUD" type="CanvasLayer" parent="."]
+
+[node name="Title" type="Label" parent="MenuHUD"]
+offset_left = 288.0
+offset_top = 90.0
+offset_right = 1014.0
+offset_bottom = 202.0
+theme = SubResource("Theme_ycrsf")
+text = "Cosmo Strife"
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -1.0
+offset_right = 1283.0
+offset_bottom = 723.0
+texture = ExtResource("3_2jvws")
+stretch_mode = 1
+
+[node name="Meteor" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_left = 475.0
+offset_top = 269.0
+offset_right = 815.0
+offset_bottom = 565.0
+texture = ExtResource("4_oaew1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 584.0
+offset_top = 337.0
+offset_right = 698.0
+offset_bottom = 481.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_n2flv")
+text = "Play"
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_phaln")
+text = "Options"
+
+[node name="ExitGame" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_1qxme")
+text = "Exit Game"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ExitGame" to="." method="_on_exit_game_pressed"]

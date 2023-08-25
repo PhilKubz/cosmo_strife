@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://Scripts/enemy_basic.gd" id="1_xmbek"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nnhko"]
-size = Vector2(19, 33)
+size = Vector2(19, 34.625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_reebh"]
-size = Vector2(8.09186, 24.4835)
+size = Vector2(21.0189, 44.0626)
 
 [node name="EnemyBasic" type="Area2D"]
 collision_layer = 8
@@ -15,19 +15,21 @@ collision_mask = 35
 script = ExtResource("1_xmbek")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_hw6kt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.3)
+scale = Vector2(1.6, 1.6)
 shape = SubResource("RectangleShape2D_nnhko")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-11.0883, 3.71982)
+position = Vector2(-17.3911, 5.6667)
 rotation = -0.500824
 shape = SubResource("RectangleShape2D_reebh")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-position = Vector2(11, 4)
+position = Vector2(17, 6)
 rotation = 0.50091
 shape = SubResource("RectangleShape2D_reebh")
 

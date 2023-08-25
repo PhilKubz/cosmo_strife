@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxjuphvvataxa"]
+
+[ext_resource type="Script" path="res://Scripts/game.gd" id="1_pcben"]
+[ext_resource type="PackedScene" uid="uid://cperenpi52u1r" path="res://Scenes/Levels/level_01.tscn" id="2_l6qps"]
+[ext_resource type="PackedScene" uid="uid://j0er3g6kb1xo" path="res://Scenes/UI/menu_pause.tscn" id="3_en0gc"]
+
+[node name="GameManager" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_pcben")
+
+[node name="Level_01" parent="." instance=ExtResource("2_l6qps")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 2
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_en0gc")]
+visible = false
+
+[node name="Deathzone" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 24
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deathzone"]

@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://cperenpi52u1r"]
+
+[ext_resource type="Script" path="res://Scripts/level_01.gd" id="1_36og5"]
+[ext_resource type="Texture2D" uid="uid://dn4tiqiocqaxm" path="res://Assets/Space 1/Backgrounds/black.png" id="1_pka0e"]
+[ext_resource type="PackedScene" uid="uid://cvqnd6a2mn2l" path="res://Scenes/player.tscn" id="2_upua0"]
+[ext_resource type="PackedScene" uid="uid://b0i71bajsxtb1" path="res://Scenes/enemy_spawner.tscn" id="3_nf8kt"]
+
+[node name="Level" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_36og5")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = -6.0
+offset_top = -4.0
+offset_right = 1286.0
+offset_bottom = 726.0
+texture = ExtResource("1_pka0e")
+stretch_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("2_upua0")]
+position = Vector2(57, 682)
+
+[node name="EnemySpawner" parent="." instance=ExtResource("3_nf8kt")]
+
+[connection signal="damage_taken" from="Player" to="." method="_on_player_damage_taken"]
+[connection signal="enemy_spawned" from="EnemySpawner" to="." method="_on_enemy_spawner_enemy_spawned"]

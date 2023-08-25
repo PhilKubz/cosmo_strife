@@ -1,5 +1,16 @@
 extends Node2D
 
+class_name GameManager
+
+signal toggle_game_paused(is_paused : bool)
+
+var game_paused : bool = false:
+	get:
+		return game_paused
+	set(value):
+		game_paused = value
+		get_tree().paused = !game_paused
+		emit_signal("toggle_game_paused", game_paused)
 #var lives = 3
 #var score = 0
 
@@ -13,12 +24,14 @@ extends Node2D
 
 func _ready():
 	pass
+	# Assuming the deathzone is named "Deathzone" in the scene
 #	hud.set_score_label(score)
 #	hud.set_lives(lives)
 
 func _on_deathzone_area_entered(area):
+	print("Object entered the deathzone:", area.name)
 	area.queue_free()
-	_on_player_damage_taken()
+#	_on_player_damage_taken()
 
 #func _on_player_damage_taken():
 #	lives -= 1
@@ -33,15 +46,10 @@ func _on_deathzone_area_entered(area):
 #		gameover.set_score(score)
 #		ui.add_child(gameover)
 		
-
 func _input(event : InputEvent):
-	if(event.is_action_pressed("ui_cancel")):
-		var current_value : bool = get_tree().paused
-		get_tree().paused = !current_value
+		if(event.is_action_pressed("ui_cancel")):
+			game_paused = !game_paused
 
-func _on_enemy_spawner_enemy_spawned(enemy_basic_instance):
-	enemy_basic_instance.connect("enemy_died", on_enemy_died)
-	add_child(enemy_basic_instance)
 	
 func on_enemy_died():
 	pass
