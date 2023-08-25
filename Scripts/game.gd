@@ -18,7 +18,8 @@ func _ready():
 
 func _on_deathzone_area_entered(area):
 	area.queue_free()
-	_on_player_damage_taken()
+	print("Deathzone is working, one more down!")
+#	_on_player_damage_taken()
 
 #func _on_player_damage_taken():
 #	lives -= 1
