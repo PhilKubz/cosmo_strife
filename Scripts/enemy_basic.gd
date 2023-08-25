@@ -12,14 +12,11 @@ func die():
 	enemy_died.emit()
 
 
-func _on_area_entered(area):
-	die()
+#func _on_area_entered(area):
+#	die()
 
 
 func _on_body_entered(body):
 	body.take_damage()
 	queue_free()
 
-#
-#func _on_enemy_died():
-#	pass # Replace with function body.

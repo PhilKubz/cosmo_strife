@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsrxbmpkhtkn7"]
+
+[ext_resource type="Texture2D" uid="uid://cnr3dn1tk1m4r" path="res://Assets/Space 1/PNG/playerShip1_orange.png" id="1_3dhuo"]
+[ext_resource type="Script" path="res://Scenes/UI/hud.gd" id="1_igct2"]
+[ext_resource type="Theme" uid="uid://cide667dkkndu" path="res://Scenes/UI/game_theme.tres" id="2_16lkt"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_igct2")
+
+[node name="Lives" type="Node2D" parent="."]
+
+[node name="Life1" type="Sprite2D" parent="Lives"]
+position = Vector2(118, 70)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_3dhuo")
+
+[node name="Life2" type="Sprite2D" parent="Lives"]
+position = Vector2(153, 70)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_3dhuo")
+
+[node name="Life 3" type="Sprite2D" parent="Lives"]
+position = Vector2(188, 70)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_3dhuo")
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 11.0
+offset_right = 103.0
+offset_bottom = 41.0
+theme = ExtResource("2_16lkt")
+text = "Score: "
+
+[node name="LivesLeft" type="Label" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 55.0
+offset_right = 109.0
+offset_bottom = 88.0
+theme = ExtResource("2_16lkt")
+text = "Lives: "

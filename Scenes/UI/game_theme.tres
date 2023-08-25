@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cide667dkkndu"]
+
+[ext_resource type="FontFile" uid="uid://dqp4av6fdah05" path="res://Assets/Space 1/Bonus/kenvector_future_thin.ttf" id="1_qfehl"]
+
+[resource]
+default_font = ExtResource("1_qfehl")
+default_font_size = 26

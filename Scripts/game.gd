@@ -1,13 +1,28 @@
 extends Node2D
 
+class_name GameManagerFunction
+
+signal toggle_game_paused(is_paused : bool)
+
+var game_paused : bool = false:
+	get:
+		return game_paused
+	set(value):
+		game_paused = value
+		get_tree().paused = game_paused
+		emit_signal("toggle_game_paused", game_paused)
+
 #var lives = 3
 #var score = 0
 
+#	set(value):
+#		score = value
+#		hud.score = score
+
 #var gameover_scene = preload("res://scenes/game_over_screen.tscn")
 
+@onready var enemy_spawner = $EnemySpawner
 @onready var player = $Player
-@onready var hud = $UI/HUD
-@onready var ui = $UI
 #@onready var enemy_hit_sound = $EnemyHitSound
 #@onready var player_hit_sound = $PlayerHitSound
 
@@ -16,9 +31,13 @@ func _ready():
 #	hud.set_score_label(score)
 #	hud.set_lives(lives)
 
+func _input(event : InputEvent):
+	if(event.is_action_pressed("ui_cancel")):
+		game_paused = !game_paused
+
 func _on_deathzone_area_entered(area):
 	area.queue_free()
-	print("Deathzone is working, one more down!")
+#	print("Deathzone is working, one more down!")
 #	_on_player_damage_taken()
 
 #func _on_player_damage_taken():
@@ -35,20 +54,10 @@ func _on_deathzone_area_entered(area):
 #		ui.add_child(gameover)
 		
 
-func _input(event : InputEvent):
-	if(event.is_action_pressed("ui_cancel")):
-		var current_value : bool = get_tree().paused
-		get_tree().paused = !current_value
-
-func _on_enemy_spawner_enemy_spawned(enemy_basic_instance):
-	enemy_basic_instance.connect("enemy_died", on_enemy_died)
-	add_child(enemy_basic_instance)
+#func _on_enemy_spawner_enemy_spawned(enemy_basic_instance):
+#	enemy_basic_instance.connect("enemy_died", on_enemy_died)
+#	add_child(enemy_basic_instance)
 	
-func on_enemy_died():
-	pass
-#	score += 100
-#	hud.set_score_label(score)
-#	enemy_hit_sound.play()
 
 #func on_special_enemy_died():
 #	score += 200
