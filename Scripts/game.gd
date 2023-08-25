@@ -13,7 +13,7 @@ var game_paused : bool = false:
 		emit_signal("toggle_game_paused", game_paused)
 
 #var lives = 3
-#var score = 0
+var score = 0
 
 #	set(value):
 #		score = value
@@ -30,7 +30,7 @@ var game_paused : bool = false:
 
 func _ready():
 	pass
-#	hud.set_score_label(score)
+	hud.set_score_label(score)
 #	hud.set_lives(lives)
 
 func _input(event : InputEvent):
