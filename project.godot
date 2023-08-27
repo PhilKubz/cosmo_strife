@@ -65,3 +65,4 @@ shoot_2={
 2d_physics/layer_4="enemy_basic"
 2d_physics/layer_5="enemy_quick"
 2d_physics/layer_6="deathzone"
+2d_physics/layer_7="enemy_blue"

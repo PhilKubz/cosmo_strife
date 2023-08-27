@@ -2,10 +2,10 @@ extends Area2D
 
 signal enemy_died
 
-@export var speed = 270
+@export var speed = 420
 
 func _physics_process(delta):
-	global_position.y += speed * delta
+	global_position.x += speed * delta
 
 func die():
 	queue_free()

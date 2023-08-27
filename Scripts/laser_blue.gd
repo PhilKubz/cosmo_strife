@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var speed = 350
+@export var speed = 700
 @onready var visible_notifier = $VisibleNotifier
 
 func _ready():

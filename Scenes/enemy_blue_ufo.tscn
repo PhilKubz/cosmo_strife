@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://3chq0xpighg1"]
+
+[ext_resource type="Texture2D" uid="uid://bm0trh1d27m16" path="res://Assets/Space 1/PNG/ufoBlue.png" id="1_jmgy5"]
+[ext_resource type="Script" path="res://Scripts/enemy_blue_ufo.gd" id="1_ss55p"]
+[ext_resource type="Texture2D" uid="uid://b5b3dm660uchk" path="res://Assets/Space 1/PNG/ufo_eye_3.png" id="2_q4lwv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lp0kj"]
+radius = 13.0
+height = 114.0
+
+[node name="enemy_blue_ufo" type="Area2D"]
+collision_layer = 64
+collision_mask = 4
+script = ExtResource("1_ss55p")
+
+[node name="UfoBlue" type="Sprite2D" parent="."]
+rotation = -6.28319
+scale = Vector2(1.25199, 0.259228)
+texture = ExtResource("1_jmgy5")
+flip_h = true
+
+[node name="UfoEye3" type="Sprite2D" parent="UfoBlue"]
+position = Vector2(-0.372192, -18.424)
+rotation = 2.15712e-05
+scale = Vector2(1.4541, 2.89321)
+skew = -2.07424e-05
+texture = ExtResource("2_q4lwv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_lp0kj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]

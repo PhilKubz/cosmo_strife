@@ -54,7 +54,7 @@ func _on_deathzone_area_entered(area):
 #		var gameover = gameover_scene.instantiate()
 #		gameover.set_score(score)
 #		ui.add_child(gameover)
-		
+	
 
 #func _on_enemy_spawner_enemy_spawned(enemy_basic_instance):
 #	enemy_basic_instance.connect("enemy_died", on_enemy_died)
@@ -71,7 +71,7 @@ func _on_deathzone_area_entered(area):
 #	add_child(path_enemy_instance_01)
 #	path_enemy_instance_01.enemy1.connect("enemy_died", on_special_enemy_died)
 #
-#
+
 #func _on_enemy_spawner_path_enemy_spawned_02(path_enemy_instance_02):
 #	add_child(path_enemy_instance_02)
 #	path_enemy_instance_02.enemy2.connect("enemy_died", on_special_enemy_died)

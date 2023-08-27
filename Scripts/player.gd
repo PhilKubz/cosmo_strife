@@ -36,7 +36,7 @@ func _physics_process(delta):
 #
 #
 func shoot():
-	print("Shooting laser!")
+#	print("Shooting laser!")
 	var laser_red_instance = laser_red_scene.instantiate()
 	if laser_red_instance:
 		laser_red_container.add_child(laser_red_instance)
@@ -48,7 +48,7 @@ func shoot():
 #	rocket_laser_sound.play()
 
 func shoot_2():
-	print("Shooting laser 2!")
+#	print("Shooting laser 2!")
 	var laser_blue_instance = laser_blue_scene.instantiate()
 	if laser_blue_instance:
 		laser_blue_container.add_child(laser_blue_instance)
