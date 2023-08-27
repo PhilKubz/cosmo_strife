@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch4lhd672b1xb"]
+
+[ext_resource type="PackedScene" uid="uid://bsrxbmpkhtkn7" path="res://Scenes/UI/hud.tscn" id="1_oeaab"]
+[ext_resource type="PackedScene" uid="uid://cvqnd6a2mn2l" path="res://Scenes/player.tscn" id="2_e2hs2"]
+[ext_resource type="Texture2D" uid="uid://dn4tiqiocqaxm" path="res://Assets/Space 1/Backgrounds/black.png" id="2_npp8y"]
+
+[node name="Level_02" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("1_oeaab")]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = -12.0
+offset_top = -11.0
+offset_right = 1316.0
+offset_bottom = 739.0
+texture = ExtResource("2_npp8y")
+stretch_mode = 1
+
+[node name="player" parent="." instance=ExtResource("2_e2hs2")]
+position = Vector2(57, 682)

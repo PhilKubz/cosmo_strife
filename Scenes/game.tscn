@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bsrxbmpkhtkn7" path="res://Scenes/UI/hud.tscn" id="4_47fbx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nvo5n"]
-size = Vector2(1534, 102)
+size = Vector2(1432, 102)
 
 [node name="GameManager" type="Node2D"]
 process_mode = 3
@@ -28,6 +28,16 @@ collision_layer = 32
 collision_mask = 24
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Deathzone"]
+shape = SubResource("RectangleShape2D_nvo5n")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Deathzone"]
+position = Vector2(888, -561)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_nvo5n")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Deathzone"]
+position = Vector2(-899, -570)
+rotation = 1.5708
 shape = SubResource("RectangleShape2D_nvo5n")
 
 [connection signal="area_entered" from="Deathzone" to="." method="_on_deathzone_area_entered"]
